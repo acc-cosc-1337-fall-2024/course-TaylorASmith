@@ -21,5 +21,5 @@ int main()
 	result = multiply_numbers(num1);
 
 	cout<<"Value is: "<<result<<"\n";
-	return 0;
+	return 0; 
 }
