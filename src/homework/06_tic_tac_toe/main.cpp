@@ -1,10 +1,13 @@
 // main.cpp
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_manager.h"
 #include <iostream>
 #include <cstdlib>
 using namespace std;
 
 int main() {
+    TicTacToeManager manager;
+
     char choice;
     do {
         TicTacToe game;
@@ -28,6 +31,13 @@ int main() {
                 } else {
                     cout << "Player " << winner << " wins!" << endl;
                 }
+
+                manager.save_game(game);
+
+                int x_win, o_win, ties;
+                manager.get_winner_total(o_win, x_win, ties);
+                cout << "X wins: " << x_win << ", O wins: " << o_win << ", Ties: " << ties << endl;
+
                 break;
             }
         } while (true);
