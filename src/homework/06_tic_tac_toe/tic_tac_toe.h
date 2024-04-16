@@ -8,22 +8,25 @@ using namespace std;
 
 class TicTacToe {
 public:
-    // Constructor is not specified in the requirements as it's not explicitly stated
-    // Member Functions
-    bool game_over() const; // Check if the game is over
-    void start_game(string first_player); // Start the game
-    void mark_board(int position); // Mark the board at a specific position
-    string get_player() const; // Get the current player
-    void display_board() const; // Display the tic-tac-toe board
+    TicTacToe(); 
+    bool game_over() const;
+    void start_game(std::string first_player);
+    void mark_board(int position);
+    std::string get_player() const;
+    void display_board() const;
+    std::string get_winner() const;
 private:
-    // Private Member Functions
-    void set_next_player(); // Set the next player
-    bool check_board_full() const; // Check if the board is full
-    void clear_board(); // Clear the board
+    void set_next_player();
+    bool check_board_full() const;
+    void clear_board();
+    bool check_column_win() const;
+    bool check_row_win() const;
+    bool check_diagonal_win() const;
+    void set_winner();
 
-    // Private Data Members
-    string player; // Current player
-    vector<string> pegs; // Tic-tac-toe board
+    std::string player;
+    std::vector<std::string> pegs;
+    std::string winner;
 };
 
-#endif // TIC_TAC_TOE_H
+#endif
